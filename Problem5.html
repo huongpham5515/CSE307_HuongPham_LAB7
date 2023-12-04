@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .alert {
+            background: red;
+            color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .alert.success {
+            background: #03945f;
+        }
+
+        .alert.info {
+            background: #1c83d7;
+        }
+
+        .alert.warning {
+            background: #ff9d0a;
+        }
+
+        .x {
+            color: white;
+            font-size: 22px;
+            float: right;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message">
+        <h3>Alert Message</h3>
+        <p>Click on the "x" symbol to close the alert message.</p>
+
+        <div class="alert">
+            <strong>Danger!</strong>Indicates a dangerous potentially negative
+            action.
+            <span class="x">&times;</span>
+        </div>
+
+        <div class="alert success">
+            <strong>Success!</strong>Indicates a dangerous potentially negative
+            action.
+            <span class="x">&times;</span>
+        </div>
+
+        <div class="alert info">
+            <strong>Info!</strong>Indicates a dangerous potentially negative
+            action.
+            <span class="x">&times;</span>
+        </div>
+
+        <div class="alert warning">
+            <strong>Warning!</strong>Indicates a dangerous potentially negative
+            action.
+            <span class="x">&times;</span>
+        </div>
+    </div>
+
+    <script>
+        let x = document.querySelectorAll('.x');
+        var i;
+
+        for (i = 0; i < x.length; i++) {
+            x[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.opacity = "0";
+            }
+        }
+    </script>
+</body>
+
+</html>

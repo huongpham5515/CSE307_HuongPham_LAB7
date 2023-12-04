@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>form</title>
+
+        <script>
+            function valid(){
+                let name = document.forms["Registration"]["name"].value;
+                let email = document.forms["Registration"]["email"].value;
+                let password = document.forms["Registration"]["password"].value;
+                let confirm = document.forms["Registration"]["confirm"].value;
+                let number = document.forms["Registration"]["number"].value;
+                if(name == ""){
+                    document.getElementById('nameError').innerHTML = "Please enter your name";
+                }
+                if(email == ""){
+                    document.getElementById('emailError').innerHTML = "Please enter your email";
+                }
+                if(password == ""){
+                    document.getElementById('passwordError').innerHTML = "Please enter your password(min-length = 6)";
+                }
+                if(confirm != password){
+                    document.getElementById('confirmError').innerHTML = "It does not match your password";
+                }
+                if(number == ""){
+                    document.getElementById('phoneError').innerHTML = "Please enter your phone numbers";
+                }
+            }
+        </script>
+    </head>
+    <body>
+    <form name = "Registration" method="post" action="">
+        <table border = "1" cellpadding = "2" style = "width: 60%">
+            <tr>
+                <th><label for = "fullname">Fullname*</label></th>
+                <td><input type = "text" name="name" maxlength = "100" placeholder="Enter your full name" style="width: 90%;"> 
+                <p id="nameError" style="color: red;"></p></td>
+                
+            </tr>
+            <tr>
+                <th><label for = "email">Email*</label></th>
+                <td><input type = "email" name = "email" style="width: 90%;">
+                    <p id="emailError" style="color: red;"></td>
+                
+            </tr>
+            <tr>
+                <th><label for = "Password">Password*</label></th>
+                <td><input type = "password" name = "password"  minlength="6" style="width: 90%;">
+                    <p id="passwordError" style="color: red;"></td></td>
+                    
+            </tr>
+            <tr>
+                <th><label for = "confirm">Confirm Password*</label></th>
+                <td><input type = "password" name = "confirm" minlength = "6" style="width: 90%;">
+                    <p id="confirmError" style="color: red;"></td>
+            </tr>
+            <tr>
+                <th><label for = "number">Phone number*</label></th>
+                <td><input type = "tel" name = "number" pattern = "[0-9]{10}" style="width: 90%;">
+                <p id="phoneError" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <th><label for = "Address">Address</label></th>
+                <td><textarea name = "address" maxlength = "100" style="width: 90%;"></textarea></td>
+            </tr>
+            <tr>
+                <th><label for = "City">City</label></th>
+                <td><input type = "text" name = "City" maxlength = "100" placeholder="Enter your City">
+                <label for = "State"><b>State</b></label> <input type="text" name = "state" placeholder="Enter your State" style="width: 25%;">
+            </td>
+            </tr>
+            <tr>
+                <th><label for = "code">Zip/Postal Code</label></th>
+                <td><input type = "text" name = "code" maxlength = "100" placeholder="Enter your Zip/Postal Code" style="width: 90%;"></td>
+            </tr>
+            <tr>
+                <th><label for = "Country">Country</label></th>
+                <td>
+                    <select name ="Select your country">    
+                    <option value = "Vietnam">Vietnam</option>
+                    <option value = "China">China</option>
+                    <option value="America">America</option>
+                    <option value="Venezuela">Venezuela</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <th><label for = "Birthday">Birthday</label></th>
+                <td>
+                    <input type = "date" name = "birthday" placeholder="mm/ dd/ yyyy">
+                </td>
+            </tr>
+            <tr>
+                <th><label for = "Gender">Gender</label></th>
+                <td>
+                    <select name ="Gender">    
+                        <option value = "Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                </td>
+            </tr>
+            <tr>
+                <th><label for = "starting date">Starting date</label></th>
+               <td> <input type = "radio" name = "date" value ="Spring">Spring
+                    <input type = "radio" name = "date" value = "Summer">Summer</td>
+            </tr>
+            <tr>
+                <th><label for = "comments">Comments</label></th>
+                <td>
+                    <textarea name = "Comments" maxlength="100" placeholder="Please send us more information" style="width: 90%;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <center><button type = "button" onclick="valid()">Submit</center>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function change(){
+            document.querySelector('.example').style.background = 'yellow';
+            document.querySelector('.example').style.color = 'blue';
+            document.querySelector('.example').style.fontSize = '19px';
+            document.querySelector('.example2').style.border = '1px solid red';
+        }
+    </script>
+
+</head>
+<body>
+    <p class="example" style="background: rgb(208, 237, 242); color: green;">This is the first paragraph with class "example"</p>
+    <p>This is another paragraph</p>
+    <p><a class="example2" href="#">Link with target attribute</a></p>
+    <p><input type="button" value = "Change" onclick="change()"></p>
+</body>
+</html>

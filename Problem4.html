@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image {
+            display: flex;
+            margin-left: 150px;
+        }
+
+        .text {
+            text-align: center;
+        }
+
+        .image img:hover {
+            transform: scale(1.3);
+        }
+    </style>
+    <script>
+        function image(imgs) {
+            var ima = document.getElementById('ima');
+            var Imatex = document.getElementById('text');
+            ima.src = imgs.src;
+            Imatex.innerHTML = imgs.alt;
+
+            Imatex.style.border = "1px red solid";
+            Imatex.style.background = "lightblue";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="text">
+        <h4>Tabbed Image Gallery</h4>
+        <p>Click on the image below</p>
+    </div>
+    <div class="image">
+        <div id="row">
+            <img src="C:\Users\ADMIN\Downloads\img_Practice3\Davinci.png" style="width: 100%; height: 400px;"
+                alt="The Da Vinci Code" onclick="image(this)">
+        </div>
+        <div id="row">
+            <img src="C:\Users\ADMIN\Downloads\img_Practice3\EnglishForTech.jpg" style="width: 100%; height: 400px;"
+                alt="English for Tech" onclick="image(this)">
+        </div>
+        <div id="row">
+            <img src="C:\Users\ADMIN\Downloads\img_Practice3\harrypotter.png" style="width: 100%; height: 400px;"
+                alt="Harry Potter" onclick="image(this)">
+        </div>
+        <div id="row">
+            <img src="C:\Users\ADMIN\Downloads\download.jpg" style="width: 100%; height: 400px;"
+                alt="Giao Trinh Tin hoc" onclick="image(this)">
+        </div>
+    </div>
+    <div class="container">
+        <p id="text"></p>
+        <img id="ima"></p>
+    </div>
+
+</body>
+
+</html>
